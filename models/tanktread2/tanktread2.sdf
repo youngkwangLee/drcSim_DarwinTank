@@ -19,6 +19,105 @@
         </geometry>
       </visual>
     </link> 
+
+    <link name='plate'>
+      <pose>-0.01 0 0.111 0 0 0</pose>
+      <collision name='collision'>
+        <geometry>
+          <box>
+            <size>0.10 0.10 0.02</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name='visual'>
+        <geometry>
+          <box>
+            <size>0.10 0.10 0.02</size>
+          </box>
+        </geometry>
+      </visual>
+    </link> 
+    
+    <link name='plate_pole1'>
+      <pose>0.035 0.045 0.088125 0 0 0</pose>
+      <collision name='collision'>
+        <geometry>
+          <cylinder>
+          	<radius>0.003</radius>
+          	<length>0.06</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <visual name='visual'>
+        <geometry>
+          <cylinder>
+          	<radius>0.003</radius>
+          	<length>0.06</length>
+          </cylinder>
+        </geometry>
+      </visual>
+    </link> 
+
+    <link name='plate_pole2'>
+      <pose>0.035 -0.045 0.088125 0 0 0</pose>
+      <collision name='collision'>
+        <geometry>
+          <cylinder>
+          	<radius>0.003</radius>
+          	<length>0.06</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <visual name='visual'>
+        <geometry>
+          <cylinder>
+          	<radius>0.003</radius>
+          	<length>0.06</length>
+          </cylinder>
+        </geometry>
+      </visual>
+    </link> 
+
+    <link name='plate_pole3'>
+      <pose>-0.055 0.045 0.088125 0 0 0</pose>
+      <collision name='collision'>
+        <geometry>
+          <cylinder>
+          	<radius>0.003</radius>
+          	<length>0.06</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <visual name='visual'>
+        <geometry>
+          <cylinder>
+          	<radius>0.003</radius>
+          	<length>0.06</length>
+          </cylinder>
+        </geometry>
+      </visual>
+    </link> 
+
+    <link name='plate_pole4'>
+      <pose>-0.055 -0.045 0.088125 0 0 0</pose>
+      <collision name='collision'>
+        <geometry>
+          <cylinder>
+          	<radius>0.003</radius>
+          	<length>0.06</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <visual name='visual'>
+        <geometry>
+          <cylinder>
+          	<radius>0.003</radius>
+          	<length>0.06</length>
+          </cylinder>
+        </geometry>
+      </visual>
+    </link> 
+    
   
   <link name="left_backwheel">
   	<pose>-0.065 0.115 0.035 0 1.5707 1.5707</pose>
@@ -351,6 +450,76 @@
     <parent>chassis</parent>
     <axis>
       <xyz>0 1 0</xyz>
+    </axis>
+  </joint>
+  
+  <joint type="revolute" name="plate_pole1_hinge">
+    <pose>0 0 0 0 0 0</pose>
+    <child>plate_pole1</child>
+    <parent>chassis</parent>
+    <axis>
+      <xyz>0 1 0</xyz>
+    </axis>
+  </joint>
+  
+  <joint type="revolute" name="plate_pole2_hinge">
+    <pose>0 0 0 0 0 0</pose>
+    <child>plate_pole2</child>
+    <parent>chassis</parent>
+    <axis>
+      <xyz>0 1 0</xyz>
+    </axis>
+  </joint>
+  
+  <joint type="revolute" name="plate_pole3_hinge">
+    <pose>0 0 0 0 0 0</pose>
+    <child>plate_pole3</child>
+    <parent>chassis</parent>
+    <axis>
+      <xyz>0 1 0</xyz>
+    </axis>
+  </joint>
+  
+  <joint type="revolute" name="plate_pole4_hinge">
+    <pose>0 0 0 0 0 0</pose>
+    <child>plate_pole4</child>
+    <parent>chassis</parent>
+    <axis>
+      <xyz>0 1 0</xyz>
+    </axis>
+  </joint>
+
+  <joint type="revolute" name="plate_hinge1">
+    <pose>0 0 0 0 0 0</pose>
+    <child>plate_pole1</child>
+    <parent>plate</parent>  
+    <axis>
+      <xyz>0 0 1</xyz>
+    </axis>
+  </joint>
+
+  <joint type="revolute" name="plate_hinge2">
+    <pose>0 0 0 0 0 0</pose>
+    <child>plate_pole2</child>
+    <parent>plate</parent>  
+    <axis>
+      <xyz>0 0 1</xyz>
+    </axis>
+  </joint>
+  <joint type="revolute" name="plate_hinge3">
+    <pose>0 0 0 0 0 0</pose>
+    <child>plate_pole3</child>
+    <parent>plate</parent>  
+    <axis>
+      <xyz>0 0 1</xyz>
+    </axis>
+  </joint>
+  <joint type="revolute" name="plate_hinge4">
+    <pose>0 0 0 0 0 0</pose>
+    <child>plate_pole4</child>
+    <parent>plate</parent>  
+    <axis>
+      <xyz>0 0 1</xyz>
     </axis>
   </joint>
   
